@@ -226,17 +226,17 @@ end
 # p player_stats("Reggie Evans")
 
 def big_shoe_rebounds
-  rebounds=0
+  shoe_size=0
   shoe_man=0
   x= game_hash[:home][:players]
   x.each do |playa|
-    shoe_man=playa[:player_name] if playa[:rebounds]>rebounds
-    rebounds = playa[:rebounds] if playa[:rebounds]>rebounds
+    shoe_man=playa[:player_name] if playa[:shoe>shoe_size
+    shoe_size = playa[:rebounds] if playa[:shoe>shoe_size
   end
   y= game_hash[:away][:players]
   x.each do |playa|
-    shoe_man=playa[:player_name] if playa[:rebounds]>rebounds
-    rebounds = playa[:rebounds] if playa[:rebounds]>rebounds
+    shoe_man=playa[:player_name] if playa[:shoe>shoe_size
+    shoe_size = playa[:rebounds] if playa[:shoe>shoe_size
   end
   shoe_man
 end
