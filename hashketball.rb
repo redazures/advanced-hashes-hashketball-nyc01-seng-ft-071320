@@ -227,15 +227,15 @@ end
 
 def big_shoe_rebounds
   shoe_size=0
-  shoe_man=0
+  shoe_man_rebound=0
   x= game_hash[:home][:players]
   x.each do |playa|
-    shoe_man=playa[:player_name] if playa[:shoe]>shoe_size
+    shoe_man_rebound=playa[:rebounds] if playa[:shoe]>shoe_size
     shoe_size = playa[:shoe] if playa[:shoe]>shoe_size
   end
   y= game_hash[:away][:players]
   x.each do |playa|
-    shoe_man=playa[:player_name] if playa[:shoe]>shoe_size
+    shoe_man_rebound=playa[:rebounds] if playa[:shoe]>shoe_size
     shoe_size = playa[:shoe] if playa[:shoe]>shoe_size
   end
   shoe_man
