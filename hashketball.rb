@@ -239,4 +239,4 @@ def big_shoe_rebounds
   rebounds
 end
 
-big_shoe_rebounds
+p big_shoe_rebounds
