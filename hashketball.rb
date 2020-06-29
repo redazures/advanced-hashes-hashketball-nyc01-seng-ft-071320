@@ -236,7 +236,7 @@ def big_shoe_rebounds
   x.each do |playa|
     rebounds = playa[:rebounds], shoe_man=playa[:player_name] if playa[:rebounds]>rebounds
   end
-  rebounds
+  shoe_man
 end
 
 p big_shoe_rebounds
