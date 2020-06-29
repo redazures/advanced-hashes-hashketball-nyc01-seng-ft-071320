@@ -167,12 +167,11 @@ def shoe_size(player)
 end
 # p shoe_size ("Kemba Walker")
 
-def team_colors #(team)
+def team_colors (team)
   cala=[]
-  switch=0
   game_hash.each do|status,information|
-    puts status[:colors]
-    # puts information
+    # puts status[0]
+    cala=information[:colors] if information[:team_name]==team
     # information.each do |cata,subinfo|
     #   puts :team_name[subinfo] if cata==:colors
     # end
@@ -180,4 +179,62 @@ def team_colors #(team)
   cala
 end
 
-p team_colors #("Charlotte Hornets")
+# p team_colors ("Charlotte Hornets")
+
+def team_names
+  cala=[]
+  game_hash.each do |status,information|
+    # puts status
+    # puts information[:team_name]
+    cala<< information[:team_name]
+  end
+  p cala
+end
+
+#team_names
+
+def player_numbers (team)
+  cala=[]
+  if game_hash[:home][:team_name]==team
+    x= game_hash[:home][:players]
+    x.each do |playa,stats|
+      cala<< playa[:number] if playa[:player_name].kind_of?String
+    end
+  elsif game_hash[:away][:team_name]==team
+    y= game_hash[:away][:players]
+    y.each do |playa,stats|
+      cala<< playa[:number] if playa[:player_name].kind_of?String
+    end
+  else
+    cala="Nothing to see here folks"
+  end
+  cala
+end
+# p player_numbers("Brooklyn Nets")
+def player_stats (player)
+  out={}
+  x= game_hash[:home][:players]
+  x.each do |playa|
+    out = playa if playa[:player_name]==player
+  end
+  y= game_hash[:away][:players]
+  y.each do |playa,stats|
+    out = playa if playa[:player_name]==player
+  end
+  out
+end
+# p player_stats("Reggie Evans")
+
+def big_shoe_rebounds
+  rebounds=0
+  shoe_man=0
+  x= game_hash[:home][:players]
+  x.each do |playa|
+    rebounds = playa[:rebounds] if playa[:rebounds]>rebounds
+  end
+  y= game_hash[:away][:players]
+  y.each do |playa,stats|
+    out = playa if playa[:player_name]==player
+  end
+  out
+end
