@@ -127,3 +127,57 @@ def game_hash
 end
 
 # Write code here
+
+def num_points_scored(player)
+  out="no player"
+  x= game_hash[:home][:players]
+  x.each do |playa|
+      #this is where the players are listed and his stats
+    out = playa[:points] if playa[:player_name]==player
+      # playa.each do |key,value|
+      #   puts "This is the key #{key} and this is the value #{value}"
+      #   out=value if player=key
+      # end
+  end
+   y= game_hash[:away][:players]
+   y.each do |playa,stats|
+     out = playa[:points] if playa[:player_name]==player
+   end
+  out
+end
+
+#p num_points_scored ("Kemba Walker")
+
+def shoe_size(player)
+  out="no player"
+  x= game_hash[:home][:players]
+  x.each do |playa|
+      #this is where the players are listed and his stats
+    out = playa[:shoe] if playa[:player_name]==player
+      # playa.each do |key,value|
+      #   puts "This is the key #{key} and this is the value #{value}"
+      #   out=value if player=key
+      # end
+  end
+   y= game_hash[:away][:players]
+   y.each do |playa,stats|
+     out = playa[:shoe] if playa[:player_name]==player
+   end
+  out
+end
+# p shoe_size ("Kemba Walker")
+
+def team_colors #(team)
+  cala=[]
+  switch=0
+  game_hash.each do|status,information|
+    puts status[:colors]
+    # puts information
+    # information.each do |cata,subinfo|
+    #   puts :team_name[subinfo] if cata==:colors
+    # end
+  end
+  cala
+end
+
+p team_colors #("Charlotte Hornets")
