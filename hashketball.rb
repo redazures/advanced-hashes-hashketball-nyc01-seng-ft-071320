@@ -233,8 +233,8 @@ def big_shoe_rebounds
     rebounds = playa[:rebounds] if playa[:rebounds]>rebounds
   end
   y= game_hash[:away][:players]
-  y.each do |playa,stats|
-    out = playa if playa[:player_name]==player
+  x.each do |playa|
+    rebounds = playa[:rebounds] if playa[:rebounds]>rebounds
   end
   out
 end
